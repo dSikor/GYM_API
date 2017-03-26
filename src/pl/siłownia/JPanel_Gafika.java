@@ -21,7 +21,9 @@ import javax.swing.JPanel;
 public class JPanel_Gafika extends JPanel{
     
     private BufferedImage grafikaSilacz;
-
+  //  private int szerokosc; 
+   // private int wysokosc; 
+    
     public JPanel_Gafika(String nazwaPlikuJPG) {
       //  public JPanel_Gafika() {
         super();
