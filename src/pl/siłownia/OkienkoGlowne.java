@@ -5,18 +5,28 @@
  */
 package pl.siłownia;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Damian
  */
 public class OkienkoGlowne extends javax.swing.JFrame {
 
+    int rozmiarEkranu_X;
+    int rozmiarEkranu_Y;
+    
     /**
      * Creates new form OkienkoGlowne
      */
     public OkienkoGlowne() {
-        initComponents();
-            
+        
+        initComponents();       
+        Dimension RozmiarEkranu = Toolkit.getDefaultToolkit().getScreenSize();
+        rozmiarEkranu_X=(int)RozmiarEkranu.width;
+        rozmiarEkranu_Y=(int)RozmiarEkranu.height;
+
     }
 
     /**
@@ -71,16 +81,23 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         jButton_ZapisWymiarowCiala = new javax.swing.JButton();
         jButton_UsunOstatniWpis = new javax.swing.JButton();
         jButton_StwórzNowyPlik = new javax.swing.JButton();
+        jButton_Powrot1 = new javax.swing.JButton();
         jLabel_TytulAplikacji = new javax.swing.JLabel();
         jButton_S = new javax.swing.JButton();
         jButton_E = new javax.swing.JButton();
+
+        //int polozenie_x=(int)(rozmiarEkranu_X/2-jFrame_StworzPlanTrenigowy.getSize().width/2);
+        //int polozenie_y=(int)(rozmiarEkranu_Y/2-jFrame_StworzPlanTrenigowy.getSize().height/2);
 
         JPanel_Gafika GrafikaSilacza = new JPanel_Gafika("silacz.jpg");
         jPanel_GrafikaSilacz=GrafikaSilacza;
         jFrame_StworzPlanTrenigowy.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jFrame_StworzPlanTrenigowy.setTitle("Silka");
-        jFrame_StworzPlanTrenigowy.setLocationRelativeTo(null);
+        jFrame_StworzPlanTrenigowy.setLocation(400,150);
+
         pack();
+
+        //jFrame_StworzPlanTrenigowy.setLocationRelativeTo(null);
 
         jPanel_PartieCiala.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 51, 255), new java.awt.Color(51, 51, 255)));
 
@@ -197,7 +214,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
                             .addComponent(jButton_Powrot)
                             .addComponent(jPanel_PartieCiala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel_GrafikaSilacz, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel_GrafikaSilacz, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jFrame_StworzPlanTrenigowyLayout.setVerticalGroup(
@@ -218,8 +235,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         JPanel_Gafika GrafikaMiara = new JPanel_Gafika("miara.jpg");
         jPanel_GrafikaMiara=GrafikaMiara;
         jFrame_EfektyTreningowe.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jFrame_StworzPlanTrenigowy.setLocationRelativeTo(null);
+        jFrame_EfektyTreningowe.setLocation(400,150);
         pack();
 
         jPanel_WymiaryCiała.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, new java.awt.Color(255, 255, 0), null));
@@ -261,8 +277,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel_WymiaryCiałaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField_WymiarBiodro, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField_WymiarLydki, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jTextField_WymiarLydki, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel_WymiaryCiałaLayout.createSequentialGroup()
                         .addGroup(jPanel_WymiaryCiałaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
@@ -299,8 +314,8 @@ public class OkienkoGlowne extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField_WymiarPas, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(jTextField_WymiarPas, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_WymiaryCiałaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel_Tytuł)
@@ -345,16 +360,17 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         );
 
         jPanel_GrafikaMiara.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel_GrafikaMiara.setPreferredSize(new java.awt.Dimension(123,93));
 
         javax.swing.GroupLayout jPanel_GrafikaMiaraLayout = new javax.swing.GroupLayout(jPanel_GrafikaMiara);
         jPanel_GrafikaMiara.setLayout(jPanel_GrafikaMiaraLayout);
         jPanel_GrafikaMiaraLayout.setHorizontalGroup(
             jPanel_GrafikaMiaraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 119, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel_GrafikaMiaraLayout.setVerticalGroup(
             jPanel_GrafikaMiaraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 89, Short.MAX_VALUE)
+            .addGap(0, 56, Short.MAX_VALUE)
         );
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -371,6 +387,13 @@ public class OkienkoGlowne extends javax.swing.JFrame {
 
         jButton_StwórzNowyPlik.setText("Stwórz nowy plik");
 
+        jButton_Powrot1.setText("Powrót ");
+        jButton_Powrot1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_Powrot1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jFrame_EfektyTreningoweLayout = new javax.swing.GroupLayout(jFrame_EfektyTreningowe.getContentPane());
         jFrame_EfektyTreningowe.getContentPane().setLayout(jFrame_EfektyTreningoweLayout);
         jFrame_EfektyTreningoweLayout.setHorizontalGroup(
@@ -378,19 +401,27 @@ public class OkienkoGlowne extends javax.swing.JFrame {
             .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
                 .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel1))
+                    .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel_WymiaryCiała, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34)
                         .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel_GrafikaMiara, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton_StwórzNowyPlik, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton_ZapisWymiarowCiala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton_UsunOstatniWpis, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
-                        .addGap(132, 132, 132)
-                        .addComponent(jLabel1)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                            .addComponent(jPanel_GrafikaMiara, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
+                                .addComponent(jButton_StwórzNowyPlik, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE))
+                            .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
+                                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton_ZapisWymiarowCiala, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton_UsunOstatniWpis))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addGap(43, 43, 43))
+            .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton_Powrot1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jFrame_EfektyTreningoweLayout.setVerticalGroup(
             jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -398,17 +429,20 @@ public class OkienkoGlowne extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel_WymiaryCiała, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
                         .addComponent(jPanel_GrafikaMiara, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton_ZapisWymiarowCiala)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton_UsunOstatniWpis)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_StwórzNowyPlik)))
-                .addContainerGap(12, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_StwórzNowyPlik)
+                        .addGap(29, 29, 29)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton_Powrot1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -490,6 +524,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
        
         this.setVisible(false);
          jFrame_EfektyTreningowe.setVisible(true);
+         jFrame_EfektyTreningowe.pack();
         
         
     }//GEN-LAST:event_jButton_EActionPerformed
@@ -497,6 +532,13 @@ public class OkienkoGlowne extends javax.swing.JFrame {
     private void jButton_ZapisWymiarowCialaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ZapisWymiarowCialaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_ZapisWymiarowCialaActionPerformed
+
+    private void jButton_Powrot1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Powrot1ActionPerformed
+        // TODO add your handling code here:
+        jFrame_EfektyTreningowe.setVisible(false);
+        this.setVisible(true);
+
+    }//GEN-LAST:event_jButton_Powrot1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -544,6 +586,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Nogi;
     private javax.swing.JButton jButton_Plecy;
     private javax.swing.JButton jButton_Powrot;
+    private javax.swing.JButton jButton_Powrot1;
     private javax.swing.JButton jButton_Rozgrzewka;
     private javax.swing.JButton jButton_S;
     private javax.swing.JButton jButton_StwórzNowyPlik;

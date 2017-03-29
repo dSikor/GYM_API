@@ -8,8 +8,8 @@
         <Property name="title" type="java.lang.String" value="Silka"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jFrame_StworzPlanTrenigowy.setLocationRelativeTo(null);&#xa;pack();"/>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="JPanel_Gafika GrafikaSilacza = new JPanel_Gafika(&quot;silacz.jpg&quot;);&#xa;jPanel_GrafikaSilacz=GrafikaSilacza;"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jFrame_StworzPlanTrenigowy.setLocation(400,150);&#xa;&#xa;pack();&#xa;&#xa;//jFrame_StworzPlanTrenigowy.setLocationRelativeTo(null);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="//int polozenie_x=(int)(rozmiarEkranu_X/2-jFrame_StworzPlanTrenigowy.getSize().width/2);&#xa;//int polozenie_y=(int)(rozmiarEkranu_Y/2-jFrame_StworzPlanTrenigowy.getSize().height/2);&#xa;&#xa;JPanel_Gafika GrafikaSilacza = new JPanel_Gafika(&quot;silacz.jpg&quot;);&#xa;jPanel_GrafikaSilacz=GrafikaSilacza;"/>
         <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="OkienkoGlowne_jFrame_StworzPlanTrenigowy"/>
       </AuxValues>
 
@@ -31,7 +31,7 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel_GrafikaSilacz" min="-2" pref="181" max="-2" attributes="0"/>
+                  <Component id="jPanel_GrafikaSilacz" pref="181" max="32767" attributes="0"/>
                   <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -236,7 +236,7 @@
         <Property name="title" type="java.lang.String" value="Silka"/>
       </Properties>
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="JPanel_Gafika GrafikaMiara = new JPanel_Gafika(&quot;miara.jpg&quot;);&#xa;jPanel_GrafikaMiara=GrafikaMiara;&#xa;jFrame_EfektyTreningowe.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);&#xa;&#xa;jFrame_StworzPlanTrenigowy.setLocationRelativeTo(null);&#xa;pack();"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="JPanel_Gafika GrafikaMiara = new JPanel_Gafika(&quot;miara.jpg&quot;);&#xa;jPanel_GrafikaMiara=GrafikaMiara;&#xa;jFrame_EfektyTreningowe.setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);&#xa;jFrame_EfektyTreningowe.setLocation(400,150);&#xa;pack();"/>
       </AuxValues>
 
       <Layout>
@@ -245,24 +245,35 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel_WymiaryCiała" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanel_GrafikaMiara" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jButton_StwórzNowyPlik" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton_ZapisWymiarowCiala" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton_UsunOstatniWpis" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanel_GrafikaMiara" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jButton_StwórzNowyPlik" min="-2" pref="117" max="-2" attributes="0"/>
+                                  <EmptySpace pref="6" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jButton_ZapisWymiarowCiala" min="-2" pref="117" max="-2" attributes="0"/>
+                                      <Component id="jButton_UsunOstatniWpis" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
-                  <EmptySpace pref="43" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton_Powrot1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -272,19 +283,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="21" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jPanel_WymiaryCiała" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jPanel_GrafikaMiara" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jButton_ZapisWymiarowCiala" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jButton_UsunOstatniWpis" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton_StwórzNowyPlik" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jButton_Powrot1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -317,7 +331,6 @@
                                   <Component id="jTextField_WymiarBiodro" min="-2" pref="38" max="-2" attributes="0"/>
                                   <Component id="jTextField_WymiarLydki" min="-2" pref="38" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -368,9 +381,9 @@
                                       <Component id="jTextField_WymiarPas" min="-2" pref="39" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -513,16 +526,19 @@
               </Border>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jPanel_GrafikaMiara.setPreferredSize(new java.awt.Dimension(123,93));"/>
+          </AuxValues>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="119" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="89" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
@@ -552,6 +568,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Stw&#xf3;rz nowy plik"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton_Powrot1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Powr&#xf3;t "/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_Powrot1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
