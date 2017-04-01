@@ -568,6 +568,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Stw&#xf3;rz nowy plik"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_Stw&#xf3;rzNowyPlikActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton_Powrot1">
           <Properties>

@@ -7,6 +7,7 @@ package pl.siłownia;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -386,6 +387,11 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         jButton_UsunOstatniWpis.setText("Usuń ostatni wpis");
 
         jButton_StwórzNowyPlik.setText("Stwórz nowy plik");
+        jButton_StwórzNowyPlik.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_StwórzNowyPlikActionPerformed(evt);
+            }
+        });
 
         jButton_Powrot1.setText("Powrót ");
         jButton_Powrot1.addActionListener(new java.awt.event.ActionListener() {
@@ -539,6 +545,13 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         this.setVisible(true);
 
     }//GEN-LAST:event_jButton_Powrot1ActionPerformed
+
+    private void jButton_StwórzNowyPlikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_StwórzNowyPlikActionPerformed
+       
+      String nazwa =JOptionPane.showInputDialog(null,"Podaj nazwę nowego pliku (z rozszerzeniem xlsx)");
+      Exel_Actions.stworzNowyPlikExel(nazwa);
+             
+    }//GEN-LAST:event_jButton_StwórzNowyPlikActionPerformed
 
     /**
      * @param args the command line arguments
