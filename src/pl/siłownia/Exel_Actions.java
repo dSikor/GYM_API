@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -64,7 +65,7 @@ public class Exel_Actions {
                  
     }
     
-   void stworzTabeleDoPomiaruEfektowTreningu()
+   void stworzTabeleDoPomiaruEfektowTreningu(List tablicaTytulowNaglowka)
    {
        
        try {
@@ -72,7 +73,7 @@ public class Exel_Actions {
            arkusz=new XSSFWorkbook(strumienOdczytu);
            strona=arkusz.getSheet("1");
            
-           stworzNaglowekTabeli();
+           stworzNaglowekTabeli(tablicaTytulowNaglowka);
                    
        } catch (FileNotFoundException ex) {
            Logger.getLogger(Exel_Actions.class.getName()).log(Level.SEVERE, null, ex);
@@ -87,7 +88,7 @@ public class Exel_Actions {
     
    
   // void stworzNaglowekTabeli(String[] polaNaglowka)
-   void stworzNaglowekTabeli()
+   void stworzNaglowekTabeli(List tablicaTytulowNaglowka)
    {
        aktualnyWierszStrony=strona.createRow(0);
            
@@ -99,10 +100,11 @@ public class Exel_Actions {
            stylNagłowka.setFillForegroundColor(HSSFColor.GREEN.index);
            stylNagłowka.setFillPattern(FillPatternType.SOLID_FOREGROUND);
           
-           for(int i=0; i<13;i++)
+           //String tytul = (String)tablicaTytulowNaglowka.get(0);
+           for(int i=0; i<12;i++)
            {
                 aktualnaKomorkaWiersza=aktualnyWierszStrony.createCell(i);
-                aktualnaKomorkaWiersza.setCellValue(i);              
+                aktualnaKomorkaWiersza.setCellValue((String)tablicaTytulowNaglowka.get(i));              
                 aktualnaKomorkaWiersza.setCellStyle(stylNagłowka);               
            }
                   

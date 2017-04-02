@@ -553,9 +553,20 @@ public class OkienkoGlowne extends javax.swing.JFrame {
       Exel_Actions nowy = new Exel_Actions();
       
        List<String> naglowki = new ArrayList<String>();
+       naglowki.add("Data");
+       naglowki.add("Plan Treningowy");
        naglowki.add(jLabel3.getText());
-      
-      nowy.stworzTabeleDoPomiaruEfektowTreningu();
+       naglowki.add(jLabel4.getText());
+       naglowki.add(jLabel2.getText());
+       naglowki.add(jLabel6.getText());
+       naglowki.add(jLabel7.getText());
+       naglowki.add(jLabel5.getText());
+       naglowki.add(jLabel8.getText());
+       naglowki.add(jLabel9.getText());
+       naglowki.add(jLabel10.getText());
+       naglowki.add(jLabel11.getText());
+          
+      nowy.stworzTabeleDoPomiaruEfektowTreningu(naglowki);
              
     
        
