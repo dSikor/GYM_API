@@ -20,10 +20,10 @@ public class Exel_Actions {
    static String nazwaPlikuExel;
    static FileOutputStream strumienZapisu;
    
-  static XSSFWorkbook arkusz; 
-   static XSSFSheet strona;
+    static XSSFWorkbook arkusz; 
+    static XSSFSheet strona;
     XSSFRow aktualnyWierszStrony;
-    XSSFCell aktualnaKomurkaWiersza;
+    XSSFCell aktualnaKomorkaWiersza;
    
 
     public Exel_Actions() {
@@ -46,11 +46,23 @@ public class Exel_Actions {
        } catch (FileNotFoundException wyjątek1) {
          
            JOptionPane.showMessageDialog(null,"Plik o podanym tytule nie istnieje !!!","Błąd",JOptionPane.ERROR_MESSAGE);
+           
        } catch (IOException ex) {
+           
            Logger.getLogger(Exel_Actions.class.getName()).log(Level.SEVERE, null, ex);
        }
                  
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
 }

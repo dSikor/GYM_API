@@ -15,18 +15,14 @@ import javax.swing.JOptionPane;
  */
 public class OkienkoGlowne extends javax.swing.JFrame {
 
-    int rozmiarEkranu_X;
-    int rozmiarEkranu_Y;
-    
+ 
     /**
      * Creates new form OkienkoGlowne
      */
     public OkienkoGlowne() {
         
         initComponents();       
-        Dimension RozmiarEkranu = Toolkit.getDefaultToolkit().getScreenSize();
-        rozmiarEkranu_X=(int)RozmiarEkranu.width;
-        rozmiarEkranu_Y=(int)RozmiarEkranu.height;
+        
 
     }
 
