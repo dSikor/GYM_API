@@ -6,7 +6,10 @@
 package pl.siłownia;
 
 import java.awt.Dimension;
+
 import java.awt.Toolkit;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -546,7 +549,17 @@ public class OkienkoGlowne extends javax.swing.JFrame {
        
       String nazwa =JOptionPane.showInputDialog(null,"Podaj nazwę nowego pliku (z rozszerzeniem xlsx)");
       Exel_Actions.stworzNowyPlikExel(nazwa);
+      
+      Exel_Actions nowy = new Exel_Actions();
+      
+       List<String> naglowki = new ArrayList<String>();
+       naglowki.add(jLabel3.getText());
+      
+      nowy.stworzTabeleDoPomiaruEfektowTreningu();
              
+    
+       
+      
     }//GEN-LAST:event_jButton_StwórzNowyPlikActionPerformed
 
     /**
