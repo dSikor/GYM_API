@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,7 +19,7 @@ import javax.swing.JOptionPane;
  */
 public class OkienkoGlowne extends javax.swing.JFrame {
 
- 
+ Exel_Actions nowy = new Exel_Actions();
     /**
      * Creates new form OkienkoGlowne
      */
@@ -26,7 +27,6 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         
         initComponents();       
         
-
     }
 
     /**
@@ -82,6 +82,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
         jButton_UsunOstatniWpis = new javax.swing.JButton();
         jButton_StwórzNowyPlik = new javax.swing.JButton();
         jButton_Powrot1 = new javax.swing.JButton();
+        jButton_CzyszczenieOkien = new javax.swing.JButton();
         jLabel_TytulAplikacji = new javax.swing.JLabel();
         jButton_S = new javax.swing.JButton();
         jButton_E = new javax.swing.JButton();
@@ -399,6 +400,13 @@ public class OkienkoGlowne extends javax.swing.JFrame {
             }
         });
 
+        jButton_CzyszczenieOkien.setText("Czyszczenie okien");
+        jButton_CzyszczenieOkien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_CzyszczenieOkienActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jFrame_EfektyTreningoweLayout = new javax.swing.GroupLayout(jFrame_EfektyTreningowe.getContentPane());
         jFrame_EfektyTreningowe.getContentPane().setLayout(jFrame_EfektyTreningoweLayout);
         jFrame_EfektyTreningoweLayout.setHorizontalGroup(
@@ -418,9 +426,10 @@ public class OkienkoGlowne extends javax.swing.JFrame {
                                 .addComponent(jButton_StwórzNowyPlik, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE))
                             .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
-                                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton_ZapisWymiarowCiala, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton_UsunOstatniWpis))
+                                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton_ZapisWymiarowCiala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton_UsunOstatniWpis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton_CzyszczenieOkien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(43, 43, 43))
             .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
@@ -434,20 +443,23 @@ public class OkienkoGlowne extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel_WymiaryCiała, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
+                        .addComponent(jPanel_WymiaryCiała, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                        .addComponent(jButton_Powrot1)
+                        .addContainerGap())
                     .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
                         .addComponent(jPanel_GrafikaMiara, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton_ZapisWymiarowCiala)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton_UsunOstatniWpis)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton_StwórzNowyPlik)
-                        .addGap(29, 29, 29)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton_Powrot1)
-                .addContainerGap(16, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton_UsunOstatniWpis)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton_CzyszczenieOkien)
+                        .addGap(34, 34, 34))))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -535,7 +547,33 @@ public class OkienkoGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_EActionPerformed
 
     private void jButton_ZapisWymiarowCialaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ZapisWymiarowCialaActionPerformed
-        // TODO add your handling code here:
+       
+        JFileChooser WybranyPlikZapisu = new JFileChooser();
+       int wybranaOpcja=WybranyPlikZapisu.showSaveDialog(this);
+        
+       if(wybranaOpcja==JFileChooser.APPROVE_OPTION){
+        
+      // Exel_Actions.plik_Z_Danymi= WybranyPlikZapisu.getSelectedFile();
+        nowy.wprowadzDaneDotyczaceWskazanegoPiku(WybranyPlikZapisu.getSelectedFile());
+           
+        List<String> daneDoTabeli = new ArrayList<String>();   
+        daneDoTabeli.add(jTextField_WymiarLydki.getText());
+        daneDoTabeli.add(jTextField_WymiarUdo.getText());
+        daneDoTabeli.add(jTextField_WymiarBiodro.getText());
+        daneDoTabeli.add(jTextField_WymiarTalia.getText());
+        daneDoTabeli.add(jTextField_WymiarKlata.getText());
+        daneDoTabeli.add(jTextField_WymiarKark.getText());
+        daneDoTabeli.add(jTextField_WymiarBiceps.getText());
+        daneDoTabeli.add(jTextField_WymiarPrzedramie.getText());
+        daneDoTabeli.add(jTextField_WymiarWaga.getText());
+        daneDoTabeli.add(jTextField_WymiarPas.getText());
+        daneDoTabeli.add(jTextField_WymiarPrzedramie.getText());    
+        nowy.WprowadzDaneDoTabeli(daneDoTabeli);
+        
+       }
+       
+        
+        
     }//GEN-LAST:event_jButton_ZapisWymiarowCialaActionPerformed
 
     private void jButton_Powrot1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_Powrot1ActionPerformed
@@ -548,9 +586,12 @@ public class OkienkoGlowne extends javax.swing.JFrame {
     private void jButton_StwórzNowyPlikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_StwórzNowyPlikActionPerformed
        
       String nazwa =JOptionPane.showInputDialog(null,"Podaj nazwę nowego pliku (z rozszerzeniem xlsx)");
-      Exel_Actions.stworzNowyPlikExel(nazwa);
+      StringBuilder nazwaPlikuZRozszerzeniem= new StringBuilder(nazwa); 
+      nazwaPlikuZRozszerzeniem.append(".xlsx");
+     
+      Exel_Actions.stworzNowyPlikExel(nazwaPlikuZRozszerzeniem.toString());
       
-      Exel_Actions nowy = new Exel_Actions();
+    //  Exel_Actions nowy = new Exel_Actions();
       
        List<String> naglowki = new ArrayList<String>();
        naglowki.add("Data");
@@ -564,14 +605,24 @@ public class OkienkoGlowne extends javax.swing.JFrame {
        naglowki.add(jLabel8.getText());
        naglowki.add(jLabel9.getText());
        naglowki.add(jLabel10.getText());
-       naglowki.add(jLabel11.getText());
-          
+       naglowki.add(jLabel11.getText()); 
       nowy.stworzTabeleDoPomiaruEfektowTreningu(naglowki);
              
-    
-       
-      
     }//GEN-LAST:event_jButton_StwórzNowyPlikActionPerformed
+
+    private void jButton_CzyszczenieOkienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_CzyszczenieOkienActionPerformed
+     
+        jTextField_WymiarLydki.setText("");
+        jTextField_WymiarUdo.setText("");
+        jTextField_WymiarBiodro.setText("");
+        jTextField_WymiarTalia.setText("");
+        jTextField_WymiarKlata.setText("");
+        jTextField_WymiarKark.setText("");
+        jTextField_WymiarWaga.setText("");
+        jTextField_WymiarPas.setText("");
+        
+        
+    }//GEN-LAST:event_jButton_CzyszczenieOkienActionPerformed
 
     /**
      * @param args the command line arguments
@@ -612,6 +663,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
     private javax.swing.JButton jButton_Barki;
     private javax.swing.JButton jButton_Biceps;
     private javax.swing.JButton jButton_Brzuch;
+    private javax.swing.JButton jButton_CzyszczenieOkien;
     private javax.swing.JButton jButton_E;
     private javax.swing.JButton jButton_Inne;
     private javax.swing.JButton jButton_Klata;
