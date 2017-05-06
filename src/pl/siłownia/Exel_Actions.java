@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,16 +31,16 @@ public class Exel_Actions {
    static FileOutputStream strumienZapisu; 
    FileInputStream strumienOdczytu;
    static XSSFWorkbook arkusz; 
-   static XSSFSheet strona;
-    
-    static XSSFRow aktualnyWierszStrony;
-    XSSFCell aktualnaKomorkaWiersza;
+   static XSSFSheet strona; 
+   static XSSFRow aktualnyWierszStrony;
+   XSSFCell aktualnaKomorkaWiersza;
+   
+   
    
 
     public Exel_Actions() {
                        
     }
-   
     
     static void stworzNowyPlikExel(String tytulPliku)
     {
@@ -75,6 +76,7 @@ public class Exel_Actions {
            int numerOstatniegoZapisanegoWiersza=strona.getLastRowNum();
            System.out.println(numerOstatniegoZapisanegoWiersza);
            aktualnyWierszStrony = strona.getRow(numerOstatniegoZapisanegoWiersza);
+          // System.out.println(aktualnyWierszStrony);
            
            
        } catch (FileNotFoundException ex) {
@@ -87,7 +89,7 @@ public class Exel_Actions {
     
    void stworzTabeleDoPomiaruEfektowTreningu(List tablicaTytulowNaglowka)
    {
-       
+        
        try {
            strumienOdczytu=new FileInputStream(plik_Z_Danymi);
            arkusz=new XSSFWorkbook(strumienOdczytu);
@@ -140,6 +142,7 @@ public class Exel_Actions {
    
    void WprowadzDaneDoTabeli(List tablicaZDanymi)
    {
+      
        int numerAktualnegoWiersza = aktualnyWierszStrony.getRowNum();
        
        aktualnyWierszStrony = strona.createRow(numerAktualnegoWiersza+1);
@@ -166,5 +169,28 @@ public class Exel_Actions {
        
        
    }
-       
+   
+   void WyczyscOstatniWpisWTabeli()
+   {
+        int numerAktualnegoWiersza = aktualnyWierszStrony.getRowNum();
+        System.out.println(strona.getLastRowNum());
+        //strona.shiftRows(numerAktualnegoWiersza,numerAktualnegoWiersza,-2);
+        
+        strona.removeRow(aktualnyWierszStrony);
+        
+      System.out.println(strona.getLastRowNum());
+        try {
+           
+           strumienZapisu = new FileOutputStream(plik_Z_Danymi);
+           arkusz.write(strumienZapisu);
+           strumienZapisu.close();
+           
+       } catch (FileNotFoundException ex) {
+           Logger.getLogger(Exel_Actions.class.getName()).log(Level.SEVERE, null, ex);
+       } catch (IOException ex) {
+           Logger.getLogger(Exel_Actions.class.getName()).log(Level.SEVERE, null, ex);
+       }
+             
+   }
+        
 }
