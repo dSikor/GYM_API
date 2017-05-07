@@ -151,8 +151,8 @@ public class Exel_Actions {
        for(int i=0; i<11;i++)
        {
             aktualnaKomorkaWiersza=aktualnyWierszStrony.createCell(i);
-            aktualnaKomorkaWiersza.setCellValue((String)tablicaZDanymi.get(i));              
-                            
+                    
+            aktualnaKomorkaWiersza.setCellValue((Double)(tablicaZDanymi.get(i)));           
        }
        
         try {

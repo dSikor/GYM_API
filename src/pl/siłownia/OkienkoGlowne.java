@@ -411,7 +411,7 @@ public class OkienkoGlowne extends javax.swing.JFrame {
             .addGroup(jFrame_EfektyTreningoweLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel_WymiaryCiała, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jFrame_EfektyTreningoweLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton_ZapisWymiarowCiala, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton_UsunOstatniWpis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -562,19 +562,22 @@ public class OkienkoGlowne extends javax.swing.JFrame {
             nowy.stworzNaglowekTabeli(naglowki);
         }
          
-            List<String> daneDoTabeli = new ArrayList<String>();   
-            daneDoTabeli.add(jTextField_WymiarLydki.getText());
-            daneDoTabeli.add(jTextField_WymiarUdo.getText());
-            daneDoTabeli.add(jTextField_WymiarBiodro.getText());
-            daneDoTabeli.add(jTextField_WymiarTalia.getText());
-            daneDoTabeli.add(jTextField_WymiarKlata.getText());
-            daneDoTabeli.add(jTextField_WymiarKark.getText());
-            daneDoTabeli.add(jTextField_WymiarBiceps.getText());
-            daneDoTabeli.add(jTextField_WymiarPrzedramie.getText());
-            daneDoTabeli.add(jTextField_WymiarWaga.getText());
-            daneDoTabeli.add(jTextField_WymiarPas.getText());
-            daneDoTabeli.add(jTextField_WymiarPrzedramie.getText()); 
-        
+            //List<String> daneDoTabeli = new ArrayList<String>();
+            List<Double> daneDoTabeli = new ArrayList<Double>();
+            
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarLydki.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarUdo.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarBiodro.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarTalia.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarKlata.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarKark.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarBiceps.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarPrzedramie.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarWaga.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarPas.getText()));
+            daneDoTabeli.add(Double.parseDouble(jTextField_WymiarPrzedramie.getText())); 
+            
+          
             nowy.WprowadzDaneDoTabeli(daneDoTabeli);
              
     }//GEN-LAST:event_jButton_ZapisWymiarowCialaActionPerformed
